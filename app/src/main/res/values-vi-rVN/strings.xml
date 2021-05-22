@@ -1,0 +1,76 @@
+<resources>
+    <string name="name_school">POSTS AND TELECOMMUNICATIONS INSTITUTE OF TECHNOLOGY</string>
+
+    <string name="language">vi</string>
+
+    <string name="hello">Xin chào</string>
+    <string name="feature_dev">Tính năng đang phát triển</string>
+    <string name="app_ver">Phiên bản ứng dụng</string>
+    <string name="language_device">Ngôn ngữ của thiết bị</string>
+    <string name="theme">Giao diện</string>
+    <string name="theme_light">Sáng</string>
+    <string name="theme_night">Tối</string>
+    <string name="remind_study">Nhắc nhở học tập</string>
+    <string name="feedback_dev">Phản hồi cho nhà phát triển</string>
+    <string name="invite_friends">Mời bạn bè</string>
+    <string name="rating">Đánh giá</string>
+    <string name="log_out">Đăng xuất</string>
+    <string name="sign_with_google">Đăng nhập bằng Google</string>
+
+    <string name="math">Toán</string>
+    <string name="physic">Vậy lý</string>
+    <string name="chemistry">Hóa học</string>
+    <string name="english_sub">Tiếng anh</string>
+
+    <string name="select_language">Chọn ngôn ngữ</string>
+
+
+
+    <string name="not_data">Chưa có dữ liệu !</string>
+    <string name="sorry">Rất tiếc !</string>
+    <string name="internet_error_1">Kết nối internet chậm hoặc không có.</string>
+    <string name="internet_error_2">Vui lòng kiểm tra cài đặt internet của bạn.</string>
+    <string name="try_again">"Thử lại"</string>
+    <string name="home">Home</string>
+    <string name="account">Account</string>
+
+    <string name="practice_exam">Luyện đề</string>
+    <string name="loading_data">Đang cập nhật dữ liệu</string>
+    <string name="todo">TODO</string>
+
+    <string name="minute">phút</string>
+    <string name="sentence">câu</string>
+    <string name="e_thunder">E-Thunder</string>
+    <string name="lam_bai">Làm bài</string>
+
+    <string name="cancel">HỦY</string>
+    <string name="cancel_2">Hủy</string>
+    <string name="dong_y">Đồng Ý</string>
+    <string name="save">Lưu</string>
+
+    <string name="exam_random">Đề thi ngẫu nhiên</string>
+    <string name="answer_sheet">Phiếu đáp án</string>
+    <string name="code">Mã</string>
+
+    <string name="result">KẾT QUẢ</string>
+    <string name="new_exam">Làm đề mới</string>
+    <string name="see_result">Xem kết quả</string>
+
+    <string name="link_thunder">https://www.facebook.com/ThunderPTIT</string>
+    <string name="score">điểm</string>
+    <string name="done">Hoàn thành</string>
+    <string name="content_nop_bai">Nộp bài</string>
+    <string name="title_nop_bai">Bạn chắc chắn muốn nộp bài ?</string>
+    <string name="times_up">Hết giờ !</string>
+
+    <string name="answer">Đáp án</string>
+    <string name="correct">Đúng</string>
+    <string name="try_later">Vui lòng thử lại sau</string>
+    <string name="text_continue">Tiếp tục</string>
+    <string name="remake">Làm lại</string>
+    <string name="study_remind">Nhắc nhở học tập</string>
+    <string name="content_notify">Bạn ơi, đến giờ học rồi!</string>
+    <string name="content_study_reminder">Hãy kiên trì nhé !</string>
+
+
+</resources>

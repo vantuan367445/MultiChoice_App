@@ -1,0 +1,79 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name" translatable="false">Trắc nghiệm nhóm 07</string>
+    <string name="name_school">POSTS AND TELECOMMUNICATIONS INSTITUTE OF TECHNOLOGY</string>
+
+    <string name="language">en</string>
+
+    <string name="hello">Hi</string>
+    <string name="feature_dev">Features are under development</string>
+    <string name="app_ver">Application version</string>
+    <string name="language_device">Device language</string>
+    <string name="vietnamese" translatable="false">Tiếng việt</string>
+    <string name="english" translatable="false">English</string>
+    <string name="theme">Theme</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_night">Night</string>
+    <string name="remind_study">Study reminder</string>
+    <string name="feedback_dev">Feedback for developers</string>
+    <string name="invite_friends">Invite friends</string>
+    <string name="rating">Rating</string>
+    <string name="log_out">Log out</string>
+    <string name="sign_with_google">Sign in with Google</string>
+
+    <string name="math">Math</string>
+    <string name="physic">Physic</string>
+    <string name="chemistry">Chemistry</string>
+    <string name="english_sub">English</string>
+
+    <string name="select_language">Select language</string>
+
+
+
+    <string name="not_data">No data yet !</string>
+    <string name="sorry">Sorry !</string>
+    <string name="internet_error_1">Slow or no internet connection.</string>
+    <string name="internet_error_2">Please check your internet settings.</string>
+    <string name="try_again">Retry</string>
+    <string name="home">Home</string>
+    <string name="account">Account</string>
+
+    <string name="practice_exam">Test</string>
+    <string name="loading_data">Updating data</string>
+    <string name="todo">TODO</string>
+
+    <string name="minute">minute</string>
+    <string name="sentence">sentence</string>
+    <string name="e_thunder">E-Thunder</string>
+    <string name="lam_bai">Start now</string>
+
+    <string name="cancel" tools:ignore="ButtonCase">CANCEL</string>
+    <string name="cancel_2">Cancel</string>
+    <string name="dong_y">Yes</string>
+    <string name="save">Save</string>
+
+    <string name="exam_random">Practice exam</string>
+    <string name="answer_sheet">Answer sheet</string>
+    <string name="code">Code</string>
+
+    <string name="result">RESULT</string>
+    <string name="new_exam">New exams</string>
+    <string name="see_result">See result</string>
+
+    <string name="link_thunder">https://www.facebook.com/ThunderPTIT</string>
+    <string name="score">score</string>
+    <string name="done">Done</string>
+    <string name="content_nop_bai">Submit</string>
+    <string name="title_nop_bai">You want to submit the test</string>
+    <string name="times_up">Time up !</string>
+
+    <string name="answer">Answer</string>
+    <string name="correct">Correct</string>
+
+    <string name="try_later">Please try again later</string>
+    <string name="text_continue">Continue</string>
+    <string name="remake">Replay</string>
+    <string name="study_remind">Study reminder</string>
+    <string name="content_notify">Hey you, it\'s time  to study!</string>
+    <string name="content_study_reminder">Be persistent!</string>
+
+</resources>

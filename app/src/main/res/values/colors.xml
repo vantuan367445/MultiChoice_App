@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#FF01A733</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorWhite2">#FFFCFC</color>
+    <color name="colorGrray">#E1E0E0</color>
+
+    <color name="colorBrown">#868686</color>
+    <color name="colorGray">#EEEEEE</color>
+    <color name="colorGray2">#49494a</color>
+
+    <color name="colorYellow">#F9C10C</color>
+    <color name="colorSalmon">#FABD76</color>
+    <color name="colorLight_Primary">#708090</color>
+    <color name="colorRed">#CF2626</color>
+    <color name="colorRed2">#EE2929</color>
+    <color name="colorLime">#00FF00</color>
+    <color name="colorLime2">#FF01A733</color>
+    <color name="colorLight_Blue">#00CC99</color>
+    <color name="colorLight_Pink">#e2e1e1</color>
+    <color name="colorPink">#e5f2ad75</color>
+    <color name="colorLight_Pink2">#e5edc9ac</color>
+    <color name="color1">#4ba7a4</color>
+    <color name="color2">#1E90FF</color>
+
+    <color name="colorTextBlack">#2B241E</color>
+    <color name="colorBlack_1">#6A6868</color>
+    <color name="colorBlack_2">#000000</color>
+    <color name="colorBlack_4">#CC000000</color>
+    <color name="colorBlack_5">#1a1e25</color>
+    <color name="colorBlack_6">#96000000</color>
+    <color name="colorBlack_7">#1C1C1E</color>
+    <color name="colorBlack_8">#2C2C2E</color>
+    <color name="colorBlack">#18191a</color>
+
+</resources>

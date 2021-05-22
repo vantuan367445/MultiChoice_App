@@ -1,0 +1,57 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="ThemeLight" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorWhite</item>
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+
+        <item name="backgroundWhite">@color/colorWhite</item>
+        <item name="backgroundWhite2">@color/colorWhite2</item>
+        <item name="backgroundWhite3">@color/colorWhite</item>
+        <item name="backgroundBlack">@color/colorBlack_7</item>
+
+        <item name="colorTextBlack">@color/colorTextBlack</item>
+        <item name="colorTextWhite">@color/colorWhite</item>
+        <item name="colorGray">@color/colorGray</item>
+        <item name="colorGray2">@color/colorBlack_1</item>
+    </style>
+
+    <style name="ThemeDark" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorBlack_2</item>
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+
+        <item name="backgroundWhite">@color/colorBlack_7</item>
+        <item name="backgroundWhite2">@color/colorBlack_8</item>
+        <item name="backgroundWhite3">@color/colorBlack_8</item>
+        <item name="backgroundBlack">@color/colorWhite</item>
+
+        <item name="colorTextBlack">@color/colorWhite</item>
+        <item name="colorTextWhite">@color/colorTextBlack</item>
+        <item name="colorGray">@color/colorBlack_8</item>
+        <item name="colorGray2">@color/colorGray</item>
+    </style>
+
+    <style name="quiz_dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowAnimationStyle">@style/quizDialogAnimation</item>
+    </style>
+    <style name="quizDialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/slide_in_right_2</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_left_2</item>
+    </style>
+
+    <style name="bottom_top_dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowAnimationStyle">@style/bottomTopDialogAnimation</item>
+    </style>
+    <style name="bottomTopDialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/bottom_up</item>
+        <item name="android:windowExitAnimation">@anim/top_up</item>
+    </style>
+
+    <style name="AppTheme.Picker" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textColorPrimary">@color/colorWhite</item>
+        <item name="colorControlNormal">@color/colorWhite</item>
+    </style>
+    <style name="TimeStyle">
+        <item name="colorAccent">#FFFFFF</item>
+    </style>
+
+</resources>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorPrimary"
+    tools:context=".fragment.MyFragment">
+    <com.github.barteksc.pdfviewer.PDFView
+        android:id="@+id/pdf_viewer"
+        android:layout_width="match_parent"
+        android:layout_height="500dp">
+    </com.github.barteksc.pdfviewer.PDFView>
+    <LinearLayout
+        android:background="?attr/colorPrimary"
+        android:layout_marginBottom="@dimen/size20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:gravity="bottom"
+        android:weightSum="8"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:gravity="center"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:id="@+id/linear_choiceA"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_gravity="center"
+                android:id="@+id/txt_IdchoiceA"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:background="@drawable/custom_circle_button_khong_chon"
+                android:text="A"
+                android:layout_width="@dimen/size40dp"
+                android:layout_height="@dimen/size40dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:gravity="center"
+            android:id="@+id/linear_choiceB"
+            android:orientation="horizontal"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="B"
+                android:id="@+id/txt_IdchoiceB"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textColor="@android:color/black"
+                android:background="@drawable/custom_circle_button_khong_chon"
+                android:layout_width="@dimen/size40dp"
+                android:layout_height="@dimen/size40dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:gravity="center"
+            android:id="@+id/linear_choiceC"
+            android:orientation="horizontal"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/txt_IdchoiceC"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:background="@drawable/custom_circle_button_khong_chon"
+                android:text="C"
+                android:layout_width="@dimen/size40dp"
+                android:layout_height="@dimen/size40dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:gravity="center"
+            android:id="@+id/linear_choiceD"
+            android:orientation="horizontal"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/txt_IdchoiceD"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:background="@drawable/custom_circle_button_khong_chon"
+                android:text="D"
+                android:layout_width="@dimen/size40dp"
+                android:layout_height="@dimen/size40dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

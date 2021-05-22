@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:background="?attr/backgroundWhite"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_marginBottom="@dimen/size10dp"
+        android:layout_marginTop="@dimen/size10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent">
+        <TextView
+            android:fontFamily="@font/svn_avo"
+            android:id="@+id/txt_stt_cau"
+            android:textColor="?attr/colorTextBlack"
+            android:textSize="@dimen/size18sp"
+            android:gravity="center"
+            android:layout_width="@dimen/size30dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/size10dp"
+            android:layout_marginStart="@dimen/size5dp"
+            tools:ignore="SpUsage" />
+        <TextView
+            android:fontFamily="@font/svn_avo"
+            android:text="A"
+            android:id="@+id/txt_A"
+            android:gravity="center"
+            android:layout_marginLeft="@dimen/size10dp"
+            android:textColor="?attr/colorTextBlack"
+            android:layout_width="@dimen/size40dp"
+            android:layout_height="@dimen/size40dp"
+            android:layout_marginStart="@dimen/size10dp" />
+        <TextView
+            android:fontFamily="@font/svn_avo"
+            android:text="B"
+            android:id="@+id/txt_B"
+            android:gravity="center"
+            android:layout_marginLeft="@dimen/size10dp"
+            android:textColor="?attr/colorTextBlack"
+            android:layout_width="@dimen/size40dp"
+            android:layout_height="@dimen/size40dp"
+            android:layout_marginStart="@dimen/size10dp" />
+        <TextView
+            android:fontFamily="@font/svn_avo"
+            android:text="C"
+            android:id="@+id/txt_C"
+            android:gravity="center"
+            android:layout_marginLeft="@dimen/size10dp"
+            android:textColor="?attr/colorTextBlack"
+            android:layout_width="@dimen/size40dp"
+            android:layout_height="@dimen/size40dp"
+            android:layout_marginStart="@dimen/size10dp" />
+        <TextView
+            android:fontFamily="@font/svn_avo"
+            android:text="D"
+            android:gravity="center"
+            android:id="@+id/txt_D"
+            android:layout_marginLeft="@dimen/size10dp"
+            android:textColor="?attr/colorTextBlack"
+            android:layout_width="@dimen/size40dp"
+            android:layout_height="@dimen/size40dp"
+            android:layout_marginStart="@dimen/size10dp" />
+    </LinearLayout>
+
+
+
+</LinearLayout>

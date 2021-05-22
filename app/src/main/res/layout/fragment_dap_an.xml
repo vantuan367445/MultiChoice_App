@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:orientation="vertical"
+    android:background="?attr/colorPrimary"
+    tools:context=".fragment.DapAnFragment">
+    <RelativeLayout
+        android:background="?attr/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
+
+        <com.github.barteksc.pdfviewer.PDFView
+            android:id="@+id/pdf_viewer"
+            android:layout_width="match_parent"
+            android:layout_height="500dp" />
+
+        <LinearLayout
+            android:background="?attr/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="5dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/img_truefalseDapAn"
+                android:layout_width="@dimen/size32dp"
+                android:layout_height="@dimen/size32dp"
+                android:layout_below="@+id/line6"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/size5dp"
+                tools:ignore="ContentDescription,ObsoleteLayoutParam" />
+
+            <LinearLayout
+                android:id="@+id/line6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="8"
+                tools:ignore="DisableBaselineAlignment">
+
+                <LinearLayout
+                    android:id="@+id/linear_choiceADapAn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txt_IdchoiceADapAn"
+                        android:layout_width="@dimen/size40dp"
+                        android:layout_height="@dimen/size40dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/custom_circle_button_khong_chon"
+                        android:gravity="center"
+                        android:text="A"
+                        android:textColor="@android:color/black" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linear_choiceBDapAn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txt_IdchoiceBDapAn"
+                        android:layout_width="@dimen/size40dp"
+                        android:layout_height="@dimen/size40dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/custom_circle_button_khong_chon"
+                        android:gravity="center"
+                        android:text="B"
+                        android:textColor="@android:color/black" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linear_choiceCDapAn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txt_IdchoiceCDapAn"
+                        android:layout_width="@dimen/size40dp"
+                        android:layout_height="@dimen/size40dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/custom_circle_button_khong_chon"
+                        android:gravity="center"
+                        android:text="C"
+                        android:textColor="@android:color/black" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linear_choiceDDapAn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txt_IdchoiceDDapAn"
+                        android:layout_width="@dimen/size40dp"
+                        android:layout_height="@dimen/size40dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/custom_circle_button_khong_chon"
+                        android:gravity="center"
+                        android:text="D"
+                        android:textColor="@android:color/black" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</ScrollView>

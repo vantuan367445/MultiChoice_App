@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/backgroundWhite"
+    android:orientation="vertical"
+    tools:context=".activity.ExamActivity">
+
+    <RelativeLayout
+        android:id="@+id/relative_notConnected"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/ima1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/size80dp"
+            android:src="@drawable/ic_notconneted" />
+
+        <TextView
+            android:id="@+id/txt1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ima1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/size10dp"
+            android:fontFamily="@font/svn_avo"
+            android:text="@string/sorry"
+            android:textColor="?attr/colorTextBlack"
+            android:textSize="@dimen/size20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txt2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/size10dp"
+            android:text="@string/internet_error_1"
+            android:textColor="?attr/colorTextBlack"
+            android:textSize="@dimen/size13sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/size5dp"
+            android:fontFamily="@font/svn_avo"
+            android:text="@string/internet_error_2"
+            android:textColor="?attr/colorTextBlack"
+            android:textSize="@dimen/size13sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/btn_thulai"
+            android:layout_width="@dimen/size220dp"
+            android:layout_height="@dimen/size40dp"
+            android:layout_below="@id/txt2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/size220dp"
+            android:fontFamily="@font/svn_avo"
+            android:gravity="center"
+            android:text="@string/try_again"
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size15sp" />
+    </RelativeLayout>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:cardBackgroundColor="?attr/backgroundWhite3">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/img_back"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="22dp"
+                android:src="@drawable/ic_back"
+                app:tint="?attr/backgroundBlack"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/img_back"
+                android:layout_alignBottom="@id/img_back"
+                android:layout_marginStart="@dimen/size12dp"
+                android:layout_toEndOf="@id/img_back"
+                android:fontFamily="@font/svn_avo_bold"
+                android:gravity="center_vertical"
+                android:text="@string/practice_exam"
+                android:textColor="?attr/colorTextBlack"
+                android:textSize="@dimen/size18sp" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <RelativeLayout
+        android:id="@+id/relative_download"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/car_download"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="@dimen/size30dp"
+            android:layout_marginRight="@dimen/size30dp"
+            app:cardBackgroundColor="?attr/backgroundWhite3"
+            app:cardCornerRadius="@dimen/size10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/txt3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/size10dp"
+                    android:text="@string/loading_data"
+                    android:textColor="@color/colorLime2"
+                    android:textSize="@dimen/size15sp"
+                    android:textStyle="bold" />
+
+                <ProgressBar
+                    android:id="@+id/progress_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt3"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/size10dp"
+                    android:padding="@dimen/size8dp" />
+
+                <TextView
+                    android:id="@+id/txt_phantram"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/progress_horizontal"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/size10dp"
+                    android:layout_marginBottom="@dimen/size16dp"
+                    android:textColor="@color/colorLime2"
+                    android:textSize="@dimen/size13sp" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relative_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/card_toolBar"
+        android:background="?attr/backgroundWhite"
+        android:visibility="invisible">
+
+        <com.wang.avi.AVLoadingIndicatorView
+            android:id="@+id/avi_loading"
+            android:layout_width="@dimen/size30dp"
+            android:layout_height="@dimen/size30dp"
+            android:layout_centerInParent="true"
+            app:indicatorColor="@color/colorRed2"
+            app:indicatorName="BallPulseIndicator" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewDeThi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/txt_notData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/not_data"
+        android:textColor="?attr/colorTextBlack"
+        android:textSize="@dimen/size15sp"
+        android:textStyle="bold"
+        android:visibility="invisible" />
+
+
+</RelativeLayout>

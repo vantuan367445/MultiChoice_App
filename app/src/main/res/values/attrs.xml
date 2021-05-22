@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="dsColor">
+        <attr name="backgroundWhite" format="color" />
+        <attr name="backgroundWhite2" format="color" />
+        <attr name="backgroundWhite3" format="color" />
+        <attr name="backgroundBlack" format="color" />
+        <attr name="colorTextBlack" format="color" />
+        <attr name="colorTextWhite" format="color" />
+        <attr name="colorGray" format="color" />
+        <attr name="colorGray2" format="color" />
+    </declare-styleable>
+</resources>

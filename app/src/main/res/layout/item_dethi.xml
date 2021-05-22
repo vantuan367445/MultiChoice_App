@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="?attr/backgroundWhite3"
+    android:layout_margin="@dimen/size10dp"
+    app:cardCornerRadius="@dimen/size8dp">
+
+    <LinearLayout
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_marginTop="@dimen/size8dp"
+            android:layout_marginRight="@dimen/size8dp"
+            android:layout_marginLeft="@dimen/size8dp"
+            android:id="@+id/txt_nameDeThi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/size5dp"
+            android:textColor="?attr/colorTextBlack"
+            android:textSize="@dimen/size16sp" />
+
+        <RelativeLayout
+            android:layout_marginRight="@dimen/size8dp"
+            android:layout_marginLeft="@dimen/size8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/size5dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="@dimen/size5dp"
+                android:orientation="horizontal"
+                tools:ignore="UseCompoundDrawables">
+
+                <ImageView
+                    android:layout_width="@dimen/size16dp"
+                    android:layout_height="@dimen/size16dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/icon_copyright"
+                    tools:ignore="ContentDescription"
+                    app:tint="?attr/backgroundBlack" />
+
+                <TextView
+                    android:textColor="?attr/colorTextBlack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size5dp"
+                    android:text="@string/e_thunder"
+                    android:textSize="@dimen/size12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:orientation="horizontal"
+                tools:ignore="RelativeOverlap">
+                <TextView
+                    android:id="@+id/txtmaDeThi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="@dimen/size12sp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_marginRight="@dimen/size8dp"
+            android:layout_marginLeft="@dimen/size8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="@dimen/size5dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                tools:ignore="UselessParent">
+
+                <TextView
+                    android:id="@+id/txt_socauhoiDeThi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="?attr/colorTextBlack" />
+
+                <TextView
+                    android:id="@+id/txt_timelambaiDeThi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size50dp"
+                    android:textColor="@color/colorRed2" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/line_start"
+            android:background="?attr/selectableItemBackground"
+            android:paddingLeft="@dimen/size8dp"
+            android:paddingRight="@dimen/size8dp"
+            android:paddingTop="@dimen/size12dp"
+            android:paddingBottom="@dimen/size16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center|center_vertical"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/icon_time_24dp"
+                app:tint="?attr/backgroundBlack"
+                tools:ignore="ContentDescription" />
+            <TextView
+                android:id="@+id/btn_lambaiThi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:text="@string/lam_bai"
+                android:textColor="?attr/colorTextBlack"
+                android:layout_marginStart="@dimen/size5dp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:paddingBottom="@dimen/size20dp"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:id="@+id/line_nhap"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:gravity="center"
+            android:background="@color/colorGray"
+            android:textSize="@dimen/size20sp"
+            android:padding="@dimen/size10dp"
+
+            android:text="@string/result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:background="@color/colorBlack"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size2dp" />
+        <TextView
+            android:id="@+id/txt_dialogsocaudung"
+            android:layout_marginTop="@dimen/size20dp"
+            android:textStyle="bold"
+            android:textColor="@color/colorBlack"
+            android:gravity="center"
+            android:textSize="@dimen/size40sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/txt_dialogsodiem"
+            android:layout_marginTop="@dimen/size10dp"
+            android:textStyle="bold"
+            android:textColor="@color/colorBlack"
+            android:gravity="center"
+            android:textSize="@dimen/size40sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_marginTop="@dimen/size50dp"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            android:textColor="@color/colorWhite"
+            android:layout_marginLeft="@dimen/size5dp"
+            android:id="@+id/btn_dialoglamdemoi"
+            android:paddingRight="@dimen/size20dp"
+            android:paddingLeft="@dimen/size20dp"
+            android:textSize="@dimen/size15sp"
+            android:inputType="textCapWords"
+            android:background="@drawable/custom_button_bo_goc_yellow"
+            android:layout_alignParentLeft="true"
+            android:text="@string/new_exam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="@dimen/size5dp" />
+        <Button
+            android:textColor="@color/colorWhite"
+            android:layout_marginRight="@dimen/size5dp"
+            android:id="@+id/btn_dialogxemketqua"
+            android:paddingRight="@dimen/size20dp"
+            android:paddingLeft="@dimen/size20dp"
+            android:textSize="@dimen/size15sp"
+            android:inputType="textCapWords"
+            android:background="@drawable/custom_button_bo_goc_blu"
+            android:layout_alignParentRight="true"
+            android:text="@string/see_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/size5dp"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+    <TextView
+        android:padding="5dp"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/size10dp"
+        android:text="@string/link_thunder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
