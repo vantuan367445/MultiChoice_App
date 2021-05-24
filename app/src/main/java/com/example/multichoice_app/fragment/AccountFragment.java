@@ -178,7 +178,6 @@ public class AccountFragment extends BaseFragment {
     };
 
 
-
     private final VoidCallback feedbackClick = () -> GlobalHelper.visit(activity, "https://m.me/ThunderPTIT");
     private final VoidCallback ratingClick = () -> Toast.makeText(activity, feature_dev, Toast.LENGTH_SHORT).show();
     private final VoidCallback inviteClick = () -> Toast.makeText(activity, feature_dev, Toast.LENGTH_SHORT).show();

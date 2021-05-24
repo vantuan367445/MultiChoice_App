@@ -78,7 +78,6 @@ public class HomeActivity extends BaseActivity implements BottomNavigationView.O
         getSubject();
         initUI();
         addEvents();
-
     }
 
     private void getSubject() {
