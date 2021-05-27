@@ -77,7 +77,6 @@ public class HomeActivity extends BaseActivity implements BottomNavigationView.O
 
         getDataPhone();
         getSubject();
-        initUI();
         addEvents();
     }
 
