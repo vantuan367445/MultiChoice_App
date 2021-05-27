@@ -35,6 +35,7 @@ import com.example.multichoice_app.fragment.AccountFragment;
 import com.example.multichoice_app.fragment.HomeFragment;
 import com.example.multichoice_app.listener.IntegerCallback;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.wang.avi.AVLoadingIndicatorView;
 
 import java.util.Calendar;
 
@@ -49,6 +50,8 @@ import retrofit2.Response;
 @SuppressLint("NonConstantResourceId")
 public class HomeActivity extends BaseActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
+    @BindView(R.id.avi_loading)
+    AVLoadingIndicatorView avi_loading;
     @BindView(R.id.rela_notconnected)
     RelativeLayout real_not_connected;
     @BindView(R.id.botton_nav)
@@ -74,13 +77,13 @@ public class HomeActivity extends BaseActivity implements BottomNavigationView.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trang_chu);
         ButterKnife.bind(this);
-
         getDataPhone();
         getSubject();
         addEvents();
     }
 
     private void getSubject() {
+        showPlaceHolder(false,true);
         DataClient dataClient = APIUtills.getData();
         Call<String> callQuestions = dataClient.getSubject();
         callQuestions.enqueue(new Callback<String>() {
@@ -96,7 +99,7 @@ public class HomeActivity extends BaseActivity implements BottomNavigationView.O
                     String json = MyDataBase.loadDataType(GlobalHelper.data_subject);
                     if (!json.isEmpty())
                         initUI();
-                    else showPlaceHolder(false);
+                    else showPlaceHolder(false,false);
                 }
             }
             @Override
@@ -105,7 +108,7 @@ public class HomeActivity extends BaseActivity implements BottomNavigationView.O
                 String json = MyDataBase.loadDataType(GlobalHelper.data_subject);
                 if (!json.isEmpty())
                     initUI();
-                else showPlaceHolder(false);
+                else showPlaceHolder(false,false);
             }
         });
     }
@@ -123,7 +126,7 @@ public class HomeActivity extends BaseActivity implements BottomNavigationView.O
         mViewpager.setOffscreenPageLimit(2);
         mViewpager.setCurrentItem(0, false);
 
-        showPlaceHolder(true);
+        showPlaceHolder(true,false);
     }
     private final IntegerCallback accountCallback = value -> {
         if(value == 0){ // language
@@ -183,15 +186,24 @@ public class HomeActivity extends BaseActivity implements BottomNavigationView.O
         return false;
     }
 
-    private void showPlaceHolder(boolean isExistData) {
-        if (!isExistData) {
+    private void showPlaceHolder(boolean isExistData,boolean isLoadData) {
+        if (isLoadData){
+            real_not_connected.setVisibility(View.GONE);
+            mViewpager.setVisibility(View.GONE);
+            card_nav.setVisibility(View.GONE);
+            avi_loading.setVisibility(View.VISIBLE);
+            avi_loading.show();
+        }
+        else if (!isExistData) {
             real_not_connected.setVisibility(View.VISIBLE);
             mViewpager.setVisibility(View.GONE);
             card_nav.setVisibility(View.GONE);
+            avi_loading.setVisibility(View.GONE);
         } else {
             real_not_connected.setVisibility(View.GONE);
             mViewpager.setVisibility(View.VISIBLE);
             card_nav.setVisibility(View.VISIBLE);
+            avi_loading.setVisibility(View.GONE);
         }
     }
     private void setStudyRemind(){

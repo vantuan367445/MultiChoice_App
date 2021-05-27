@@ -108,5 +108,15 @@
             app:menu="@menu/mnu_navigation" />
     </androidx.cardview.widget.CardView>
 
+    <com.wang.avi.AVLoadingIndicatorView
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        android:id="@+id/avi_loading"
+        android:layout_width="@dimen/size30dp"
+        android:layout_height="@dimen/size30dp"
+        app:indicatorName="BallPulseIndicator"
+        app:indicatorColor="@color/colorRed2"
+        />
+
 
 </RelativeLayout>
