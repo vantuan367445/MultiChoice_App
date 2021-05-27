@@ -27,20 +27,20 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.MyViewHolder> {
-       private final Activity context;
-        private ArrayList<JSONSubjectObject> listSubbject;
+        private final Activity context;
+        private ArrayList<JSONSubjectObject> listSubject;
         private final IntegerCallback itemCallback;
 
-    public SubjectAdapter(Activity context, ArrayList<JSONSubjectObject> listSubbject, IntegerCallback itemCallback) {
+    public SubjectAdapter(Activity context, ArrayList<JSONSubjectObject> listSubbject, IntegerCallback a) {
         this.context = context;
-        this.listSubbject = listSubbject;
-        this.itemCallback = itemCallback;
+        this.listSubject = listSubbject;
+        this.itemCallback = a;
     }
 
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater inflater = LayoutInflater.from(context);
+        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View view = inflater.inflate(R.layout.item_subject,parent,false);
         return new MyViewHolder(view);
     }
@@ -68,12 +68,17 @@ public class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.MyViewHo
                 holder.txt_namesubject.setText(holder.english_sub);
                 break;
         }
-        holder.itemView.setOnClickListener(v -> itemCallback.execute(position));
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                itemCallback.execute(position);
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
-        return listSubbject != null ? listSubbject.size() : 0;
+        return listSubject != null ? listSubject.size() : 0;
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -110,7 +115,7 @@ public class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.MyViewHo
         }
     }
     public void setNewList(ArrayList<JSONSubjectObject> listSubject){
-        this.listSubbject = listSubject;
+        this.listSubject = listSubject;
         notifyDataSetChanged();
     }
 }

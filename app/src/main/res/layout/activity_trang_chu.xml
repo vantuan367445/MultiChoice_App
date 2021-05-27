@@ -84,7 +84,7 @@
 
     </RelativeLayout>
 
-    <com.example.multichoice_app.communiti.view.NonSwipeAbleViewPager
+    <com.example.multichoice_app.utils.view.NonSwipeAbleViewPager
         android:visibility="invisible"
         android:id="@+id/mViewpager"
         android:layout_width="match_parent"

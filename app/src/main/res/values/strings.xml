@@ -76,4 +76,9 @@
     <string name="content_notify">Hey you, it\'s time  to study!</string>
     <string name="content_study_reminder">Be persistent!</string>
 
+
+    <string name="choose_contact">Choose a suitable way to contact us</string>
+    <string name="send_email">Send Email</string>
+    <string name="messenger" translatable="false">Messenger</string>
+
 </resources>

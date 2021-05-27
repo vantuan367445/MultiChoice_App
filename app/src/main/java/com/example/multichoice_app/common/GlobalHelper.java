@@ -2,6 +2,7 @@ package com.example.multichoice_app.common;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -17,14 +18,13 @@ import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 import androidx.cardview.widget.CardView;
 
+import com.example.multichoice_app.BuildConfig;
 import com.example.multichoice_app.R;
 import com.example.multichoice_app.listener.IntegerCallback;
 import com.example.multichoice_app.listener.StringCallback;
 
 public class GlobalHelper {
     public static String PREFERENCE_NAME_APP = "com.example.multichoice_app";
-
-
     public static String profile = "profile";
     public static String data_subject = "data_subject";
     public static String data_exam = "data_exam";
@@ -248,6 +248,7 @@ public class GlobalHelper {
         return context.getResources().getString(R.string.theme_light);
     }
 
+    @SuppressLint("QueryPermissionsNeeded")
     public static void visit(Activity activity, String url) {
 
         Uri webpage = Uri.parse(url);
@@ -259,5 +260,17 @@ public class GlobalHelper {
         Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
         if (intent.resolveActivity(activity.getPackageManager()) != null)
             activity.startActivity(intent);
+    }
+    public static void sendEmail(Activity activity, String subject) {
+        Intent email = new Intent(Intent.ACTION_SENDTO);
+        email.setData(Uri.parse("mailto:thundersportchannel@gmail.com"));
+        email.putExtra(Intent.EXTRA_SUBJECT, subject);
+        email.putExtra(Intent.EXTRA_TEXT, "App version: " + BuildConfig.VERSION_NAME + " ");
+
+        try {
+            activity.startActivity(Intent.createChooser(email, "Send email using:"));
+        } catch (ActivityNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 }

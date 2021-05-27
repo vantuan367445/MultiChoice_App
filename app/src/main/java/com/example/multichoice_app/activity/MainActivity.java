@@ -16,8 +16,8 @@ import androidx.cardview.widget.CardView;
 import com.example.multichoice_app.R;
 import com.example.multichoice_app.common.GlobalHelper;
 import com.example.multichoice_app.common.PreferenceHelper;
-import com.example.multichoice_app.communiti.APIUtills;
-import com.example.multichoice_app.communiti.DataClient;
+import com.example.multichoice_app.utils.APIUtills;
+import com.example.multichoice_app.utils.DataClient;
 import com.example.multichoice_app.model.JSONStudentObject;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -41,13 +41,13 @@ import retrofit2.Response;
 
 @SuppressLint("NonConstantResourceId")
 public class MainActivity extends BaseActivity {
-
     @BindView(R.id.relative_content)
     RelativeLayout relative_content;
     @BindView(R.id.relative_loading)
     RelativeLayout relative_loading;
     @BindView(R.id.iv_background)
     View iv_background;
+
     @BindView(R.id.card_login_google)
     CardView card_login_google;
 
@@ -84,6 +84,8 @@ public class MainActivity extends BaseActivity {
             mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
             card_login_google.setBackground(bg_button_white_3);
+
+
         }
 
     }
@@ -124,6 +126,7 @@ public class MainActivity extends BaseActivity {
     @OnClick({R.id.card_login_google})
     void action(View view) {
         if (view.getId() == R.id.card_login_google) {
+
             Animation animation = AnimationUtils.loadAnimation(this, R.anim.amin_shake_1);
             animation.setAnimationListener(new Animation.AnimationListener() {
                 @Override
@@ -187,9 +190,14 @@ public class MainActivity extends BaseActivity {
                     try {
                         relative_loading.setVisibility(View.GONE);
                         iv_background.setVisibility(View.GONE);
+
                         JSONStudentObject studentObject = new Gson().fromJson(response.body(), JSONStudentObject.class);
                         studentObject.setUrl_Photo(personPhoto);
-                        preferenceHelper.setProfile(new Gson().toJson(studentObject));
+
+                        String json = new Gson().toJson(studentObject);
+
+                        preferenceHelper.setProfile(json);
+
                         Intent intent = new Intent(MainActivity.this, HomeActivity.class);
                         startActivity(intent);
                         finish();

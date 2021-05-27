@@ -72,5 +72,6 @@
     <string name="content_notify">Bạn ơi, đến giờ học rồi!</string>
     <string name="content_study_reminder">Hãy kiên trì nhé !</string>
 
-
+    <string name="choose_contact">Chọn 1 trong 2 cách dưới đây để gửi phản hồi cho chúng mình nhé</string>
+    <string name="send_email">Gửi Email</string>
 </resources>

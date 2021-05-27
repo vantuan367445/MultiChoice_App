@@ -80,11 +80,12 @@ public class HomeFragment extends BaseFragment {
         recyclerView_subject.setAdapter(adapter);
     }
 
-    private final IntegerCallback itemCallback = value -> {
+    private final IntegerCallback itemCallback = position -> {
         if (getActivity() == null)
             return;
         Intent intent = new Intent(getActivity(), ExamActivity.class);
-        intent.putExtra("SUBJECT_CODE", listSubject.get(value).getSubjectId());
+        JSONSubjectObject object = listSubject.get(position);
+        intent.putExtra("SUBJECT_CODE", object.getSubjectId());
         getActivity().startActivity(intent);
     };
 }

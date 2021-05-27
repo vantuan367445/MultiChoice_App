@@ -16,11 +16,13 @@ import androidx.annotation.Nullable;
 
 import com.example.multichoice_app.BuildConfig;
 import com.example.multichoice_app.R;
+
 import com.example.multichoice_app.activity.HomeActivity;
 import com.example.multichoice_app.activity.MainActivity;
 import com.example.multichoice_app.common.AnimationHelper;
 import com.example.multichoice_app.common.GlobalHelper;
 import com.example.multichoice_app.listener.IntegerCallback;
+import com.example.multichoice_app.listener.StringCallback;
 import com.example.multichoice_app.listener.VoidCallback;
 import com.example.multichoice_app.model.JSONStudentObject;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -150,23 +152,43 @@ public class AccountFragment extends BaseFragment {
 
     }
 
-    private final VoidCallback languageClick = () -> GlobalHelper.showDialogLanguage(activity, preferenceHelper.getLanguageDevice(), preferenceHelper.getThemeValue(), language -> {
-        if (!preferenceHelper.getLanguageDevice().equals(language)) {
-            preferenceHelper.setLanguageDevice(language);
-            tv_language.setText(GlobalHelper.getLanguageApp(getContext(), language));
-            if (accountCallback != null)
-                accountCallback.execute(0);
+    private final VoidCallback languageClick = new VoidCallback() {
+        @Override
+        public void execute() {
+            GlobalHelper.showDialogLanguage(activity, preferenceHelper.getLanguageDevice(), preferenceHelper.getThemeValue(),click);
+        }
+    };
+    private StringCallback click = new StringCallback() {
+        @Override
+        public void execute(String language) {
+            if (!preferenceHelper.getLanguageDevice().equals(language)) {
+                preferenceHelper.setLanguageDevice(language);
+                tv_language.setText(GlobalHelper.getLanguageApp(getContext(), language));
+                if (accountCallback != null)
+                    accountCallback.execute(0);
+            }
+        }
+    };
 
+    private VoidCallback themeClick = new VoidCallback() {
+        @Override
+        public void execute() {
+            GlobalHelper.showDialogTheme(activity, preferenceHelper.getThemeValue(),click2);
         }
-    });
-    private final VoidCallback themeClick = () -> GlobalHelper.showDialogTheme(activity, preferenceHelper.getThemeValue(), value -> {
-        if (value != preferenceHelper.getThemeValue()) {
-            preferenceHelper.setThemeValue(value);
-            tv_theme.setText(GlobalHelper.getTextTheme(getContext(), value));
-            if (accountCallback != null)
-                accountCallback.execute(1);
+    };
+    private IntegerCallback click2 = new IntegerCallback() {
+        @Override
+        public void execute(int value) {
+            if (value != preferenceHelper.getThemeValue()) {
+                preferenceHelper.setThemeValue(value);
+                tv_theme.setText(GlobalHelper.getTextTheme(getContext(), value));
+                if (accountCallback != null)
+                    accountCallback.execute(1);
+            }
         }
-    });
+    };
+
+
     private final VoidCallback remindClick = this::setStudyRemind;
     private void setStudyRemind(){
         StudyRemindFragment fragment = StudyRemindFragment.newInstance(remindStudyCallback);
@@ -178,13 +200,32 @@ public class AccountFragment extends BaseFragment {
     };
 
 
-    private final VoidCallback feedbackClick = () -> GlobalHelper.visit(activity, "https://m.me/ThunderPTIT");
+    private final VoidCallback feedbackClick = () ->{
+
+        BottomSheetReport bottom = BottomSheetReport.newInstance(new IntegerCallback() {
+            @Override
+            public void execute(int type) {
+                switch (type){
+                    case 0:
+                        GlobalHelper.sendEmail(activity, "Hỗ trợ");
+                        break;
+                    case 1:
+                        GlobalHelper.visit(activity, "https://m.me/ThunderPTIT");
+                        break;
+                }
+            }
+        }, preferenceHelper.getThemeValue());
+        if (!bottom.isAdded())
+            bottom.show(getChildFragmentManager(), bottom.getTag());
+    };
     private final VoidCallback ratingClick = () -> Toast.makeText(activity, feature_dev, Toast.LENGTH_SHORT).show();
     private final VoidCallback inviteClick = () -> Toast.makeText(activity, feature_dev, Toast.LENGTH_SHORT).show();
     private final VoidCallback logOutClick = () -> {
         if (accountCallback != null) {
+
             mGoogleSignInClient.signOut();
             preferenceHelper.setProfile("");
+
             accountCallback.execute(2);
         }
     };

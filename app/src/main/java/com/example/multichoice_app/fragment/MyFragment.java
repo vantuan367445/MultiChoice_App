@@ -34,7 +34,7 @@ import butterknife.ButterKnife;
 public class MyFragment extends BaseFragment {
     private View view;
     private int page_now,exam_id;
-    private JSONQuestionObject jsonQuestionObject = null;
+        private JSONQuestionObject jsonQuestionObject = null;
     private JSONExamLogObject.QuestionLog questionLog = null;
     private ChoiceCallback choiceCallback;
 

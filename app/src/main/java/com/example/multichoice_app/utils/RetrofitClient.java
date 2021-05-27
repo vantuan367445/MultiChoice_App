@@ -1,4 +1,4 @@
-package com.example.multichoice_app.communiti;
+package com.example.multichoice_app.utils;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

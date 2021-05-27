@@ -25,10 +25,10 @@ import com.example.multichoice_app.common.DeviceBootReceiver;
 import com.example.multichoice_app.common.GlobalHelper;
 import com.example.multichoice_app.common.PreferenceHelper;
 import com.example.multichoice_app.common.ReminderService;
-import com.example.multichoice_app.communiti.APIUtills;
-import com.example.multichoice_app.communiti.CheckConnectiom;
-import com.example.multichoice_app.communiti.DataClient;
-import com.example.multichoice_app.communiti.view.NonSwipeAbleViewPager;
+import com.example.multichoice_app.utils.APIUtills;
+import com.example.multichoice_app.utils.CheckConnectiom;
+import com.example.multichoice_app.utils.DataClient;
+import com.example.multichoice_app.utils.view.NonSwipeAbleViewPager;
 import com.example.multichoice_app.dbFlow.MyDataBase;
 import com.example.multichoice_app.dbFlow.TypeDataSave;
 import com.example.multichoice_app.fragment.AccountFragment;
@@ -74,6 +74,7 @@ public class HomeActivity extends BaseActivity implements BottomNavigationView.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trang_chu);
         ButterKnife.bind(this);
+
         getDataPhone();
         getSubject();
         initUI();
@@ -87,18 +88,21 @@ public class HomeActivity extends BaseActivity implements BottomNavigationView.O
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
                 if (response.body() != null && !response.body().isEmpty()) {
-                    MyDataBase.saveDataType(new TypeDataSave(GlobalHelper.data_subject, response.body()));
+                    // thanh cong
+                    String json = response.body();
+                    MyDataBase.saveDataType(new TypeDataSave(GlobalHelper.data_subject,json));
                     initUI();
                 } else {
+                    //lỗi
                     String json = MyDataBase.loadDataType(GlobalHelper.data_subject);
                     if (!json.isEmpty())
                         initUI();
                     else showPlaceHolder(false);
                 }
             }
-
             @Override
             public void onFailure(Call<String> call, Throwable t) {
+                //lỗi
                 String json = MyDataBase.loadDataType(GlobalHelper.data_subject);
                 if (!json.isEmpty())
                     initUI();
@@ -128,8 +132,11 @@ public class HomeActivity extends BaseActivity implements BottomNavigationView.O
             startActivity(intent);
             finish();
         }
-        else if(value == 1){
-            HomeActivity.this.recreate();
+        else if(value == 1){ // change theme
+            //HomeActivity.this.recreate();
+            Intent intent = new Intent(HomeActivity.this, MainActivity.class);
+            startActivity(intent);
+            finish();
         }else if(value == 2){ // logOut
             startActivity(new Intent(HomeActivity.this, MainActivity.class));
             finish();

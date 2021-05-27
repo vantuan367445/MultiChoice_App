@@ -23,9 +23,9 @@ import com.example.multichoice_app.R;
 import com.example.multichoice_app.adapter.ExamAdapter;
 import com.example.multichoice_app.common.GlobalHelper;
 import com.example.multichoice_app.common.PreferenceHelper;
-import com.example.multichoice_app.communiti.APIUtills;
-import com.example.multichoice_app.communiti.CheckConnectiom;
-import com.example.multichoice_app.communiti.DataClient;
+import com.example.multichoice_app.utils.APIUtills;
+import com.example.multichoice_app.utils.CheckConnectiom;
+import com.example.multichoice_app.utils.DataClient;
 
 import com.example.multichoice_app.dbFlow.MyDataBase;
 import com.example.multichoice_app.dbFlow.TypeDataSave;
@@ -113,24 +113,30 @@ public class ExamActivity extends BaseActivity {
         setContentView(R.layout.activity_exam);
         ButterKnife.bind(this);
         btn_thulai.setBackground(custom_button_bo_goc_yellow);
+
         checkSignInGetData();
     }
 
     private void checkSignInGetData() {
         if (!preferenceHelper.getProfile().isEmpty()) {
             try {
-                JSONStudentObject studentObject = new Gson().fromJson(preferenceHelper.getProfile(), JSONStudentObject.class);
+                // conver string(json ) - > object
+                // object -> string(json)
+                String jsonProfile = preferenceHelper.getProfile();
+                JSONStudentObject studentObject = new Gson().fromJson(jsonProfile, JSONStudentObject.class);
                 studentId = studentObject.getStudentId();
-                initData();
+                initUI();
             } catch (JsonSyntaxException ex) {
                 studentId = null;
             }
         } else studentId = null;
     }
 
-    private void initData() {
+    private void initUI() {
         dataClient = APIUtills.getData();
+
         Intent intent = getIntent();
+
         subject_code = intent.getStringExtra("SUBJECT_CODE");
 
         arrayExam = new ArrayList<>();
@@ -138,6 +144,7 @@ public class ExamActivity extends BaseActivity {
         recyclerViewDeThi.setLayoutManager(new LinearLayoutManager(this));
         recyclerViewDeThi.setHasFixedSize(true);
         recyclerViewDeThi.setAdapter(examAdapter);
+
         getExams();
     }
 
@@ -149,18 +156,20 @@ public class ExamActivity extends BaseActivity {
         callExams.enqueue(new Callback<String>() {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
+                // thanh cong
                 if (response.body() != null && !response.body().isEmpty()) {
                     MyDataBase.saveDataType(new TypeDataSave(GlobalHelper.data_exam + "_" + subject_code, response.body()));
-                    loadRecyclerDeThi(response.body());
+                    updateAdapter(response.body());
                 } else
                     showPlaceHolderData(false);
             }
-
             @Override
             public void onFailure(Call<String> call, Throwable t) {
-                String json = MyDataBase.loadDataType(GlobalHelper.data_exam + "_" + subject_code);
+                // lỗi
+                String key = GlobalHelper.data_exam + "_" + subject_code;
+                String json = MyDataBase.loadDataType(key);
                 if (json != null && !json.isEmpty())
-                    loadRecyclerDeThi(json);
+                    updateAdapter(json);
                 else {
                     if (!CheckConnectiom.checkCon(ExamActivity.this))
                         showPlaceHolderNotConnect();
@@ -170,11 +179,11 @@ public class ExamActivity extends BaseActivity {
         });
     }
 
-    public void loadRecyclerDeThi(String response) {
+    public void updateAdapter(String json) {
         Type type = new TypeToken<ArrayList<JSONExamsObject>>() {
         }.getType();
         try {
-            arrayExam = new Gson().fromJson(response, type);
+            arrayExam = new Gson().fromJson(json, type);
         } catch (JsonSyntaxException ex) {
             arrayExam = new ArrayList<>();
         }

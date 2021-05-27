@@ -20,15 +20,14 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.multichoice_app.R;
 import com.example.multichoice_app.adapter.AdapterMyFragment;
 import com.example.multichoice_app.adapter.AdapterNavigation;
 import com.example.multichoice_app.common.GlobalHelper;
 import com.example.multichoice_app.common.PreferenceHelper;
-import com.example.multichoice_app.communiti.APIUtills;
-import com.example.multichoice_app.communiti.DataClient;
+import com.example.multichoice_app.utils.APIUtills;
+import com.example.multichoice_app.utils.DataClient;
 import com.example.multichoice_app.dbFlow.MyDataBase;
 import com.example.multichoice_app.dbFlow.TypeDataSave;
 import com.example.multichoice_app.fragment.MyFragment;
@@ -148,7 +147,7 @@ public class PracticeActivity extends BaseActivity {
 
             //timelambai = Integer.parseInt(jsonExamsObject.getNumberOfQuestions()) * 60000;
 
-            Init();
+            initUI();
         } catch (Exception e) {
             socauhoi = 0;
             exam_id = 0;
@@ -156,7 +155,7 @@ public class PracticeActivity extends BaseActivity {
     }
 
     @SuppressLint("SetTextI18n")
-    private void Init() {
+    private void initUI() {
         initArrayFragment();
         initCountDownTimer();
         initDrawerLayout();
@@ -257,6 +256,22 @@ public class PracticeActivity extends BaseActivity {
         listNavigation = new ArrayList<>();
         for (int i = 0; i < socauhoi; i++) {
             ModelPhieuDapAn_Naviagation dapAn = new ModelPhieuDapAn_Naviagation(i, false, false, false, false);
+            if(i < arrayQueslog.size() && !arrayQueslog.get(i).getChoosenAnswer().isEmpty()){
+                switch (arrayQueslog.get(i).getChoosenAnswer().trim()){
+                    case "A":
+                        dapAn.setDapanA(true);
+                        break;
+                    case "B":
+                        dapAn.setDapanB(true);
+                        break;
+                    case "C":
+                        dapAn.setDapanC(true);
+                        break;
+                    case "D":
+                        dapAn.setDapanD(true);
+                        break;
+                }
+            }
             listNavigation.add(dapAn);
         }
         adapterNavigation = new AdapterNavigation(this, listNavigation);
@@ -314,13 +329,17 @@ public class PracticeActivity extends BaseActivity {
             else {
                 TypeDataSave typeDataSave = new TypeDataSave(GlobalHelper.JSONExamLog_Object, new Gson().toJson(examLogObject));
                 MyDataBase.saveDataType(typeDataSave);
-                Log.d("saveDBFlow", "saveDBFlow_JSONExamLog_Object");
             }
-            if (!this.isFinishing())
+            if (!this.isFinishing()){
+                Log.d("CHECK_BACK","dialogScoreIsShow1 = " + dialogScoreIsShow);
+                dialogScoreIsShow = true;
                 GlobalHelper.showDialogScore(this, scoreCallback, soCauDung, socauhoi);
+            }
+
         }
 
     }
+    private boolean dialogScoreIsShow = false;
 
     private final IntegerCallback scoreCallback = new IntegerCallback() {
         @Override
@@ -408,7 +427,7 @@ public class PracticeActivity extends BaseActivity {
     public void onBackPressed() {
         if (isRunning)
             GlobalHelper.showDialogNopBai(PracticeActivity.this, nopBaiCallback);
-        else {
+        else  {
             // đóng listView
             if ((drawerLayout.isDrawerOpen(GravityCompat.START))) {
                 drawerLayout.closeDrawer(GravityCompat.START);
@@ -435,10 +454,12 @@ public class PracticeActivity extends BaseActivity {
         public void execute(int value) {
             if (value == 0) {// nộp bài
                 statusPractice = 2; // 0 là mới, 1 là lưu, 2 nộp bài
+                countDownTimer.onFinish();
             } else if (value == 1) { // lưu
                 statusPractice = 1;
+                countDownTimer.onFinish();
             }
-            countDownTimer.onFinish();
+
         }
     };
 }

@@ -1,4 +1,4 @@
-package com.example.multichoice_app.communiti.view;
+package com.example.multichoice_app.utils.view;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
