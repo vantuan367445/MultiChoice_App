@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import androidx.cardview.widget.CardView;
 
@@ -113,10 +114,12 @@ public class MainActivity extends BaseActivity {
             try {
                 // Google Sign In was successful, authenticate with Firebase
                 GoogleSignInAccount account = task.getResult(ApiException.class);
-                Log.d("CHECK_TOKEN","token2 = " + account.getIdToken());
                 firebaseAuthWithGoogle(account);
             } catch (ApiException e) {
                 // Google Sign In failed, update UI appropriately
+                relative_loading.setVisibility(View.GONE);
+                iv_background.setVisibility(View.GONE);
+                Toast.makeText(MainActivity.this,"Login google error code : " + e.getStatusCode(),Toast.LENGTH_LONG).show();
                 Log.w("LOGIN_FIREBASE", "Google sign in failed", e);
                 // ...
             }
