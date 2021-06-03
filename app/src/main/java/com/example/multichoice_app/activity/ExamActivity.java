@@ -24,7 +24,7 @@ import com.example.multichoice_app.adapter.ExamAdapter;
 import com.example.multichoice_app.common.GlobalHelper;
 import com.example.multichoice_app.common.PreferenceHelper;
 import com.example.multichoice_app.utils.APIUtills;
-import com.example.multichoice_app.utils.CheckConnectiom;
+import com.example.multichoice_app.utils.CheckConnection;
 import com.example.multichoice_app.utils.DataClient;
 
 import com.example.multichoice_app.dbFlow.MyDataBase;
@@ -171,7 +171,7 @@ public class ExamActivity extends BaseActivity {
                 if (json != null && !json.isEmpty())
                     updateAdapter(json);
                 else {
-                    if (!CheckConnectiom.checkCon(ExamActivity.this))
+                    if (!CheckConnection.checkCon(ExamActivity.this))
                         showPlaceHolderNotConnect();
                     else showPlaceHolderData(false);
                 }
@@ -331,7 +331,7 @@ public class ExamActivity extends BaseActivity {
                     }.getType();
                     arrayQues = new Gson().fromJson(json, type);
                     downLoaded();
-                } else if (!CheckConnectiom.checkCon(ExamActivity.this))
+                } else if (!CheckConnection.checkCon(ExamActivity.this))
                     Toast.makeText(ExamActivity.this, internet_error_1, Toast.LENGTH_SHORT).show();
                 else
                     Toast.makeText(ExamActivity.this, try_later, Toast.LENGTH_SHORT).show();
@@ -397,7 +397,7 @@ public class ExamActivity extends BaseActivity {
     @OnClick({R.id.btn_thulai, R.id.img_back})
     void onClick(View view) {
         if (view.getId() == R.id.btn_thulai) {
-            if (!CheckConnectiom.checkCon(ExamActivity.this)) {
+            if (!CheckConnection.checkCon(ExamActivity.this)) {
                 showPlaceHolderNotConnect();
             } else {
                 getExams();

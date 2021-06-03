@@ -94,7 +94,6 @@ public class AnimationHelper {
 //    }
 
     public static class CycleInterpolator implements android.view.animation.Interpolator {
-
         private final float mCycles = 0.5f;
 
         @Override

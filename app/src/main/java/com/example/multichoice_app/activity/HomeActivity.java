@@ -26,7 +26,7 @@ import com.example.multichoice_app.common.GlobalHelper;
 import com.example.multichoice_app.common.PreferenceHelper;
 import com.example.multichoice_app.common.ReminderService;
 import com.example.multichoice_app.utils.APIUtills;
-import com.example.multichoice_app.utils.CheckConnectiom;
+import com.example.multichoice_app.utils.CheckConnection;
 import com.example.multichoice_app.utils.DataClient;
 import com.example.multichoice_app.utils.view.NonSwipeAbleViewPager;
 import com.example.multichoice_app.dbFlow.MyDataBase;
@@ -77,6 +77,7 @@ public class HomeActivity extends BaseActivity implements BottomNavigationView.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trang_chu);
         ButterKnife.bind(this);
+
         getDataPhone();
         getSubject();
         addEvents();
@@ -167,7 +168,7 @@ public class HomeActivity extends BaseActivity implements BottomNavigationView.O
     @OnClick(R.id.btn_thulai)
     void onClick(View view) {
         if (view.getId() == R.id.btn_thulai) {
-            boolean checkConnect = CheckConnectiom.checkCon(HomeActivity.this);
+            boolean checkConnect = CheckConnection.checkCon(HomeActivity.this);
             if (checkConnect)
                 getSubject();
         }

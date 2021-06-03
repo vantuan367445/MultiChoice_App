@@ -147,7 +147,6 @@ public class MyFragment extends BaseFragment {
 
     private void initComponent() {
         setDataFragment();
-
         linear_choiceA = view.findViewById(R.id.linear_choiceA);
         linear_choiceB = view.findViewById(R.id.linear_choiceB);
         linear_choiceC = view.findViewById(R.id.linear_choiceC);
@@ -227,7 +226,6 @@ public class MyFragment extends BaseFragment {
                         .password(null)
                         .nightMode(preferenceHelper.getThemeValue() != 0)
                         .load();
-
             }
         }
 

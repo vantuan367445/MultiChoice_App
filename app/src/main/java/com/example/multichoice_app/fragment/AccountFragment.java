@@ -222,10 +222,8 @@ public class AccountFragment extends BaseFragment {
     private final VoidCallback inviteClick = () -> Toast.makeText(activity, feature_dev, Toast.LENGTH_SHORT).show();
     private final VoidCallback logOutClick = () -> {
         if (accountCallback != null) {
-
             mGoogleSignInClient.signOut();
             preferenceHelper.setProfile("");
-
             accountCallback.execute(2);
         }
     };

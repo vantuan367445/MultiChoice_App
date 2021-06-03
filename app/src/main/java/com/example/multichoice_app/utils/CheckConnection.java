@@ -5,7 +5,7 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
-public class CheckConnectiom {
+public class CheckConnection {
 
     public static boolean checkCon(Context context){
         boolean haveConnectedWifi  = false;

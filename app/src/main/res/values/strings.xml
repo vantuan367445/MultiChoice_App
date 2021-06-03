@@ -1,5 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name" translatable="false">Trắc nghiệm nhóm 07</string>
+    <string name="app_name" translatable="false">Trắc nghiệm</string>
     <string name="name_school">POSTS AND TELECOMMUNICATIONS INSTITUTE OF TECHNOLOGY</string>
 
     <string name="language">en</string>

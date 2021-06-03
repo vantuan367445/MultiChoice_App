@@ -68,6 +68,8 @@ public class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.MyViewHo
                 holder.txt_namesubject.setText(holder.english_sub);
                 break;
         }
+
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

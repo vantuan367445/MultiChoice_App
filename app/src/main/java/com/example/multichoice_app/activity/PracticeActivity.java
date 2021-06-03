@@ -304,7 +304,6 @@ public class PracticeActivity extends BaseActivity {
                     JSONExamLogObject.QuestionLog questionLog = arrayQueslog.get(i);
                     if (questionLog.getChoosenAnswer().equals(questionLog.getCorrectAnswer()))
                         soCauDung++;
-
                 }
             }
             count_timeText.setText(times_up);

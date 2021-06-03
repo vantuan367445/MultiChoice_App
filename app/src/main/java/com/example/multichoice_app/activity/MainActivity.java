@@ -139,6 +139,7 @@ public class MainActivity extends BaseActivity {
 
                 @Override
                 public void onAnimationEnd(Animation animation) {
+
                     signIn();
                 }
 
@@ -189,7 +190,7 @@ public class MainActivity extends BaseActivity {
         call.enqueue(new Callback<String>() {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
-                if (response.body() != null) {
+                if (response.body() != null) { // gui thsnh cong
                     try {
                         relative_loading.setVisibility(View.GONE);
                         iv_background.setVisibility(View.GONE);
